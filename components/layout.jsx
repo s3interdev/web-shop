@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
-import NavigationFooter from './navigation-footer';
-import NavigationHeader from './navigation-header';
+import { Footer, Navbar } from './index';
 
 const Layout = ({ title, children }) => {
 	return (
@@ -9,33 +8,26 @@ const Layout = ({ title, children }) => {
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta
-					name="description"
-					content="Automate building of websites and web application projects using Next.JS and Tailwind CSS"
-				/>
+				<meta name="description" content="Web Shop e-Commerce application" />
 				<link rel="icon" type="image/png" href="/favicon.png" />
-				<title>
-					{title
-						? title + ' | Superior Software Solutions'
-						: 'Superior Software Solutions'}
-				</title>
+				<title>{title ? title + ' | Web Shop' : 'Web Shop'}</title>
 			</Head>
 
 			{/** body section start */}
-			<div className="flex min-h-screen flex-col justify-between">
+			<div>
 				{/** header section start start */}
 				<header>
-					<NavigationHeader />
+					<Navbar />
 				</header>
 				{/** header section start end */}
 
 				{/** main content section start */}
-				<main className="container m-auto mt-5 px-5">{children}</main>
+				<main>{children}</main>
 				{/** main content section end */}
 
 				{/** footer section start start */}
 				<footer>
-					<NavigationFooter />
+					<Footer />
 				</footer>
 				{/** footer section start start */}
 			</div>
