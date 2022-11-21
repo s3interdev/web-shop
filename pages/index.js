@@ -1,19 +1,27 @@
-import { FooterBanner, HeroBanner, Layout, Product } from '../components/index';
+import client from '../graphql/apollo-client';
+import { getBanner, getProducts } from '../graphql/queries';
+import { FooterBanner, HeroBanner, Layout } from '../components';
 
-const Home = () => {
+export const getServerSideProps = async () => {
+	const { data: banner } = await client.query({ query: getBanner });
+	const { data: products } = await client.query({ query: getProducts });
+
+	return {
+		props: { products: products.products, banner: banner.banner },
+	};
+};
+
+const Home = ({ products, banner }) => {
 	return (
 		<Layout title="Home">
-			<HeroBanner />
+			<HeroBanner heroBanner={banner} />
 
 			<div className="products-heading">
 				<h2>Best Selling Products</h2>
 				<p>Speakers of many variations</p>
 			</div>
 
-			<div className="products-container">
-				<Product />
-				{[`Product-1`, `Product-2`, `Product-3`].map((product) => product)}
-			</div>
+			<div className="products-container">{products?.map((product) => product.name)}</div>
 
 			<FooterBanner />
 		</Layout>
