@@ -268,8 +268,6 @@ span.text-red {
 
 .footer-banner-image {
 	position: absolute;
-	/* top: -35%;
-  left: 8%; */
 	top: -25%;
 	left: 25%;
 }
@@ -299,7 +297,6 @@ span.text-red {
 	right: 0;
 	top: 0;
 	z-index: 100;
-	/* will-change: transform; */
 	transition: all 1s ease-in-out;
 }
 
