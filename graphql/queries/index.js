@@ -19,6 +19,7 @@ const getProducts = gql`
 const getBanner = gql`
 	query getBanner {
 		banner(where: { title: "Banner" }) {
+			title
 			image {
 				url
 			}
