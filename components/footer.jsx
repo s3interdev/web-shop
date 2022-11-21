@@ -1,11 +1,16 @@
+import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
+
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="">
-			Footer
+		<div className="footer-container">
 			<p>© {currentYear} Superior Software Solutions</p>
-		</footer>
+			<p className="icons">
+				<AiFillInstagram />
+				<AiOutlineTwitter />
+			</p>
+		</div>
 	);
 };
 

@@ -7,7 +7,7 @@
 @layer base {
 	html,
 	body {
-		@apply m-1 box-border scroll-smooth p-1;
+		@apply m-1 box-border scroll-smooth p-0;
 	}
 
 	a {
@@ -92,6 +92,7 @@ span.text-red {
 
 .cart-item-qty {
 	position: absolute;
+	top: -5px;
 	right: -8px;
 	font-size: 12px;
 	color: #eeeeee;
