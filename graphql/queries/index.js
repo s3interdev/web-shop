@@ -15,6 +15,30 @@ const getProducts = gql`
 	}
 `;
 
+/** get product query */
+const getProduct = gql`
+	query getProduct($slug: String!) {
+		products(where: { slug: $slug }) {
+			name
+			slug
+			image {
+				url
+			}
+			price
+			details
+		}
+	}
+`;
+
+/** get product slug query */
+const getProductSlug = gql`
+	query getProductSlug {
+		products {
+			slug
+		}
+	}
+`;
+
 /** get banner query */
 const getBanner = gql`
 	query getBanner {
@@ -36,4 +60,4 @@ const getBanner = gql`
 	}
 `;
 
-export { getBanner, getProducts };
+export { getBanner, getProduct, getProducts, getProductSlug };
