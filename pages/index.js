@@ -7,12 +7,12 @@ export const getStaticProps = async () => {
 	const { data: products } = await client.query({ query: getProducts });
 
 	return {
-		props: { products: products.products, banner: banner.banner },
-		revalidate: 55,
+		props: { banner: banner.banner, products: products.products },
+		revalidate: 34,
 	};
 };
 
-const Home = ({ products, banner }) => {
+const Home = ({ banner, products }) => {
 	return (
 		<Layout title="Home">
 			<HeroBanner heroBanner={banner} />
